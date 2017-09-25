@@ -26,7 +26,7 @@ open class PullToRefreshView: UIView {
     fileprivate var arrow: UIImageView
     fileprivate var indicator: UIActivityIndicatorView
     fileprivate var scrollViewInsets: UIEdgeInsets = UIEdgeInsets.zero
-    fileprivate var refreshCompletion: ((Void) -> Void)?
+    fileprivate var refreshCompletion: (() -> Void)?
     fileprivate var pull: Bool = true
     
     fileprivate var positionY:CGFloat = 0 {
@@ -78,7 +78,7 @@ open class PullToRefreshView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init(options: PullToRefreshOption, frame: CGRect, refreshCompletion :((Void) -> Void)?, down:Bool=true) {
+    public init(options: PullToRefreshOption, frame: CGRect, refreshCompletion :(() -> Void)?, down:Bool=true) {
         self.options = options
         self.refreshCompletion = refreshCompletion
 
